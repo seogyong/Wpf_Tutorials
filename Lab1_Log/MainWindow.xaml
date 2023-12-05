@@ -1,0 +1,46 @@
+﻿<Window x:Class="Lab1_Log.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1_Log"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="900" ResizeMode="NoResize" BorderThickness="2,2,2,2">
+    <Grid>
+        <StackPanel Height="60" VerticalAlignment="Bottom" Background="Black" Orientation="Horizontal" Cursor="Hand">
+            <Button x:Name="btn_page1" Content="XAML Binding" Width="109" Click="btn_page1_Click"/>
+            <Button x:Name="btn_page2" Content="CS Binding" Width="110" Click="btn_page2_Click"/>
+            <Button x:Name="btn_page3" Content="page3" Width="110" Click="btn_page3_Click"/>
+            <Button x:Name="btn_page4" Content="Combobox&#xD;&#xA;RadioButton" Width="110" Click="btn_page4_Click"/>
+            <Button x:Name="btn_page5" Content="Serial Setting" Width="110" Click="btn_page5_Click"/>
+        </StackPanel>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="저장"/>
+                <MenuItem Header="끝내기(X)"/>
+            </MenuItem>
+            <MenuItem Header="Help(H)">
+                <MenuItem x:Name="Information" Header="정보" Click="Information_Click"/>
+            </MenuItem>
+        </Menu>
+        <Button Content="바이트 보내기" HorizontalAlignment="Center" Margin="0,231,0,0" VerticalAlignment="Top" Height="52" Width="110" Click="Button_Click" RenderTransformOrigin="0.591,0.232"/>
+        <Button Content="string 보내기" HorizontalAlignment="Center" Margin="0,297,0,0" VerticalAlignment="Top" Height="52" Width="110" Click="Button_off_Click"/>
+        <Label Content="To Do list.&#xA;1. log file saving path intro..&#xA;2. &#xA;3.page바뀔때, 초기호되지않고 마지막상태 저장하는법&#xA;https://kojaedoo.tistory.com/525&#xA;4. serial enum as alias" FontWeight="Bold" FontSize="18" FontFamily="Consolas" Margin="10,39,0,0" Height="187" VerticalAlignment="Top" HorizontalAlignment="Left" Width="471"/>
+        <Frame x:Name="frame_uart" Content="Frame" Margin="549,39,0,0" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Frame x:Name="frame_content" Height="415" VerticalAlignment="Top" NavigationUIVisibility="Hidden"/>
+    </Grid>
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border>
+                            <ContentPresenter RecognizesAccessKey="False" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>

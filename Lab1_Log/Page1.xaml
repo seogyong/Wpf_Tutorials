@@ -1,0 +1,31 @@
+﻿<Page x:Class="WpfController.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Title="Page1">
+
+    <Grid Background="Aqua">
+        <Label Content="xaml파일 상에서 Binding 예제&#xA;'TextBox_1'의 값을 'label_text'에 바인딩&#xA;underbar사용을 위해 window/page resource활ㅇㅛㅇ" Margin="10,10,0,0" Height="63" VerticalAlignment="Top" HorizontalAlignment="Left" Width="468"/>
+        <Label Content="TextBox_1" FontWeight="Bold" FontSize="18" FontFamily="Consolas" Margin="29,93,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="32" Width="89"/>
+        <Label Content="label_text" FontWeight="Bold" FontSize="18" FontFamily="Consolas" Margin="42,138,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99"/>
+        <TextBox x:Name="TextBox_1" TextWrapping="Wrap" MaxLength="20" MaxLines="1" BorderThickness="3,3,3,3" ClipToBounds="True" Text="sample_text" Margin="160,96,0,0" HorizontalAlignment="Left" Width="168" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label_text" RenderTransformOrigin="0.893,2.793" Margin="179,142,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167" Content="{Binding Text, ElementName=TextBox_1}"/>
+    </Grid>
+
+    <Page.Resources>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border>
+                            <ContentPresenter RecognizesAccessKey="False" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+</Page>
